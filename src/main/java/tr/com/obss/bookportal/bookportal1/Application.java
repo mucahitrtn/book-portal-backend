@@ -29,14 +29,14 @@ public class Application {
     CommandLineRunner run(UserService userService){
 
         return args -> {
-            //userService.saveRole(new Role(null,"ROLE_USER"));
-            //userService.saveRole(new Role(null, "ROLE_ADMIN"));
+            userService.saveRole(new Role(null,"ROLE_USER"));
+            userService.saveRole(new Role(null, "ROLE_ADMIN"));
 
-            userService.saveUser(new User(null, "Mucahit Ertano", "mucoadmin", "123",20, new ArrayList<>(), null, null));
-
+            userService.saveUser(new User(null, "Mucahit", "mucoadmin", "123",20, new ArrayList<>(), null, null));
+            userService.addAdminRoleToUser(1);
 
             //userService.addRoleToUser("muco", "ROLE_ADMIN");
-            userService.addRoleToUser("mucoadmin", "ROLE_USER");
+            //userService.addRoleToUser("mucoadmin", "ROLE_USER");
             //userService.addRoleToUser("ali", "ROLE_USER");
             //userService.addRoleToUser("omer", "ROLE_USER");
 
